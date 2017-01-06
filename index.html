@@ -13,7 +13,7 @@
 
     </head>
 
-    <body>
+    <body onload="mashGet()">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -23,11 +23,13 @@
             <a href="#"><h1>Feedr</h1></a>
             <nav>
               <ul>
-                <li><a href="#">News Source: <span>Source Name</span></a>
+                <!-- I have to add an id element to span for my javaScript to reference the sourceChange() function. -->
+                <li><a href="#">News Source: <span id="source">Source Name</span></a>
                   <ul>
-                      <li><a href="#">Source 1</a></li>
-                      <li><a href="#">Source 2</a></li>
-                      <li><a href="#">Source 3</a></li>
+                    <!-- I am using a javaScript handelr onclick and pointing it to my original function mashGet(), the goal is for each button to delete the div content and replace it with the new Source's content. -->
+                      <li><a href="#" onclick="mashGet()">Mashable</a></li>
+                      <li><a href="#" onclick="reddGet()">Reddit</a></li>
+                      <li><a href="#" onclick="diggGet()">Digg</a></li>
                   </ul>
                 </li>
               </ul>
@@ -50,58 +52,7 @@
           </div>
         </div>
         <section id="main" class="container">
-          <article class="article">
-            <section class="featuredImage">
-              <img src="images/article_placeholder_1.jpg" alt="" />
-            </section>
-            <section class="articleContent">
-                <a href="#"><h3>Test article title</h3></a>
-                <h6>Lifestyle</h6>
-            </section>
-            <section class="impressions">
-              526
-            </section>
-            <div class="clearfix"></div>
-          </article>
-          <article class="article">
-            <section class="featuredImage">
-              <img src="images/article_placeholder_2.jpg" alt="" />
-            </section>
-            <section class="articleContent">
-                <a href="#"><h3>Test article title</h3></a>
-                <h6>Lifestyle</h6>
-            </section>
-            <section class="impressions">
-              526
-            </section>
-            <div class="clearfix"></div>
-          </article>
-          <article class="article">
-            <section class="featuredImage">
-              <img src="images/article_placeholder_2.jpg" alt="" />
-            </section>
-            <section class="articleContent">
-                <a href="#"><h3>Test article title</h3></a>
-                <h6>Lifestyle</h6>
-            </section>
-            <section class="impressions">
-              526
-            </section>
-            <div class="clearfix"></div>
-          </article>
-          <article class="article">
-            <section class="featuredImage">
-              <img src="images/article_placeholder_1.jpg" alt="" />
-            </section>
-            <section class="articleContent">
-                <a href="#"><h3>Test article title</h3></a>
-                <h6>Lifestyle</h6>
-            </section>
-            <section class="impressions">
-              526
-            </section>
-            <div class="clearfix"></div>
-          </article>
+          <!-- I have to delete everything in the previous <article> section.  This is where javaScript will be adding in the new HTML. -->
         </section>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
